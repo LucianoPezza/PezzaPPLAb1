@@ -235,3 +235,14 @@ int getPrecio()
 
     return precio;
 }
+int getIdServicio()
+{
+    int servicio;
+    servicio = getInt("\nIngrese el id del servicio que quiera: ","Error. Solo ingrese numeros: ");
+            while(servicio> 20003 || servicio < 20000)
+            {
+                servicio= getInt("\nIngrese solo los ID correctos: 20000 a 20003: ","Error. Solo ingrese numeros: ");
+            }
+
+    return servicio;
+}

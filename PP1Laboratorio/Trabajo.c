@@ -52,11 +52,8 @@ int altaTrabajos(int idx, eTrabajo listaT[], int tam,int tamt, eNotebook listaN[
         if(indiceId != -1)
         {
             listarServicios(listaS, tamt);
-            auxidServicio = getInt("\nIngrese el id del servicio que quiera: ","Error. Solo ingrese numeros: ");
-            while((auxidServicio> 20003 || auxidServicio < 20000))
-            {
-                auxidServicio= getInt("\nIngrese solo los ID correctos: 20000 a 20003: ","Error. Solo ingrese numeros: ");
-            }
+            auxidServicio = getIdServicio();
+
             gotFecha(&auxTrabajo.unaFecha.dia,&auxTrabajo.unaFecha.mes, &auxTrabajo.unaFecha.anio);
 
             auxTrabajo.isEmpty = 0;
