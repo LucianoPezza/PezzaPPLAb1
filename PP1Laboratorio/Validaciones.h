@@ -13,6 +13,11 @@ int getDia(char mensaje[], char mensajeError[]);
 int getMes(char mensaje[], char mensajeError[]);
 int getAnio(char mensaje[], char mensajeError[]);
 void gotFecha(int*, int*, int*);
+int getIdServicio(char[], char[]);
+int getIdTipo();
+int getId();
+int getIdMarca();
+int getPrecio();
 float getFloat(char[]);
 
 

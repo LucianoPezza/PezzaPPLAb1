@@ -29,7 +29,6 @@ int main()
     incializarTrabajos(unTrabajo, TAM);
     hardcodearMarcaTipoYServicios(unTipo, unaMarca, HARDCODEADOS, unServicio);
 
-    idtrabajo+=HARDCODEADOS;
 
     do
     {

@@ -14,7 +14,7 @@
 	<conio.h>
 	"Validaciones.h"
 
-1589929263 source:c:\users\luciano\desktop\c\pp1laboratorio\validaciones.c
+1589947767 source:c:\users\luciano\desktop\c\pp1laboratorio\validaciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -22,9 +22,9 @@
 	<conio.h>
 	"Validaciones.h"
 
-1589929263 c:\users\luciano\desktop\c\pp1laboratorio\validaciones.h
+1589946749 c:\users\luciano\desktop\c\pp1laboratorio\validaciones.h
 
-1589931177 source:c:\users\luciano\desktop\c\pp1laboratorio\main.c
+1589946067 source:c:\users\luciano\desktop\c\pp1laboratorio\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Validaciones.h"
@@ -34,7 +34,7 @@
 	"Noteboocks.h"
 	"Trabajos.h"
 
-1589933948 source:c:\users\luciano\desktop\c\pp1laboratorio\noteboocks.c
+1589947629 source:c:\users\luciano\desktop\c\pp1laboratorio\noteboocks.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

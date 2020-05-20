@@ -58,36 +58,24 @@ int altaNotebooks(eNotebook lista[], int tam,eMarca listaM[], eTipo listaT[], in
     }
     else
     {
-        idx =getInt("Ingrese Id: ","Error. Solo ingrese numeros: ");
-        while(idx> 100 || idx < 1)
-        {
-            idx =getInt("Error. ingrese Id valida entre 1 y 100: ","Error. Solo ingrese numeros: ");
-        }
+        idx =getId();
+
         indiceID = buscarNotebook(idx, lista, tam);
         if(indiceID ==-1)
         {
             auxNot.id = idx;
             getnombre("Ingres Modelo: ","Error. Solo se pueden ingresar letras: ", auxNot.modelo);
-            auxNot.precio =getInt("Ingrese el precio: ","Error. Solo se pueden ingresar numeros: ");
-            mostrarMarcas(listaM, tammaster);
-            auxidMarca = getInt("\nIngrese el id para elejir la marca: ","Error. Solo ingrese numeros: ");
-            while((auxidMarca> 1003 || auxidMarca < 1000))
-            {
-                auxidMarca= getInt("Ingrese solo los ID correctos: 1000 a 1003: ","Error. Solo ingrese numeros: ");
-            }
-            auxNot.idMarca = auxidMarca;
+            auxNot.precio =getPrecio();
 
+            mostrarMarcas(listaM, tammaster);
+            auxidMarca = getIdMarca();
 
             mostrarTipos(listaT, tammaster);
-            auxidTipo = getInt("\nIngrese el id para elejir el tipo: ", "Error. Solo ingrese numeros: ");
-            while((auxidTipo > 5003 || auxidTipo< 5000))
-            {
-                auxidTipo = getInt("Ingrese solo los ID correctos: 5000 a 5003: ", "Error. Solo ingrese numeros: ");
-            }
+            auxidTipo = getIdTipo();
+
             auxNot.idTipo =auxidTipo;
-
+            auxNot.idMarca = auxidMarca;
             auxNot.isEmpty=0;
-
             lista[indice] = auxNot;
             confirmo = 1;
         }
@@ -195,11 +183,7 @@ void modificarNotebook(eNotebook lista[], int tam, eMarca listaM[], eTipo listaT
             case 2:
                 system("cls");
                 mostrarTipos(listaT, tammaster);
-                auxTipo = getInt("\nIngrese el id para elejir el nuevo tipo: ", "Error. Solo ingrese numeros: ");
-                while((auxTipo > 5003 || auxTipo< 5000))
-                {
-                    auxTipo = getInt("Ingrese solo los ID correctos: 5000 a 5003: ", "Error. Solo ingrese numeros: ");
-                }
+                auxTipo = getIdTipo();
                 lista[indice].idTipo = auxTipo;
                 break;
             case 3:
@@ -234,10 +218,11 @@ void mostrarNotebooks(eNotebook lista[], int tam, eMarca listaM[],eTipo listaT[]
             mostrarNotebook(lista[i],listaM,listaT,tammaster);
             flag = 1;
         }
-    }if(flag == 0)
-        {
-            printf("No hay trabajos que mostrar");
-        }
+    }
+    if(flag == 0)
+    {
+        printf("No hay trabajos que mostrar");
+    }
 }
 
 void ordenarPorMarcaYPrecio(eMarca listaM[], int tam, eNotebook lista[])

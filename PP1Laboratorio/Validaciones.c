@@ -194,3 +194,44 @@ void gotFecha(int* dia, int* mes, int* anio)
     }
 
 }
+int getIdMarca()
+{
+    int idMarca;
+    idMarca = getInt("Ingrese el id de la marca: ", "Error. solo numeros1");
+    while(idMarca > 1003 || idMarca < 1000)
+            {
+                idMarca= getInt("Ingrese solo los ID correctos: 1000 a 1003: ","Error. Solo ingrese numeros: ");
+            }
+    return idMarca;
+}
+int getIdTipo()
+{
+    int tipoId;
+   tipoId = getInt("Ingrese el id del tipo: ", "Error. Ingrese solo numeros: ");
+      while(tipoId > 5003 || tipoId < 5000)
+            {
+                tipoId = getInt("Ingrese solo los ID correctos: 5000 a 5003: ", "Error. Solo ingrese numeros: ");
+            }
+    return tipoId;
+}
+int getId()
+{
+    int idx;
+    idx =getInt("Ingrese Id: ","Error. Solo ingrese numeros: ");
+        while(idx> 99 || idx < 1)
+        {
+            idx =getInt("Error. ingrese Id valida entre 1 y 100: ","Error. Solo ingrese numeros: ");
+        }
+     return idx;
+}
+int getPrecio()
+{
+    int precio;
+    precio = getInt("Ingrese el precio: ", "Error. Ingrese solo numeros: ");
+    while(precio > 80000 || precio < 5000)
+    {
+        precio = getInt("Ingrese un precio adecuado (Precio minimo: 5000 - Precio Maximo: 80000 )","Error. Solo ingrese numeros: ");
+    }
+
+    return precio;
+}
