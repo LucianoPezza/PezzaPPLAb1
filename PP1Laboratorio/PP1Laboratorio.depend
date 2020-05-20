@@ -1,0 +1,93 @@
+# depslib dependency file v1.0
+1589721698 source:c:\users\luciano\desktop\pp1laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+
+1589721550 c:\users\luciano\desktop\pp1laboratorio\validaciones.h
+
+1589721567 source:c:\users\luciano\desktop\pp1laboratorio\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Validaciones.h"
+
+1589929263 source:c:\users\luciano\desktop\c\pp1laboratorio\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Validaciones.h"
+
+1589929263 c:\users\luciano\desktop\c\pp1laboratorio\validaciones.h
+
+1589931177 source:c:\users\luciano\desktop\c\pp1laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Marca.h"
+	"Tipo.h"
+	"Servicios.h"
+	"Noteboocks.h"
+	"Trabajos.h"
+
+1589933948 source:c:\users\luciano\desktop\c\pp1laboratorio\noteboocks.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Noteboocks.h"
+	"Validaciones.h"
+	"Marca.h"
+	"Tipo.h"
+
+1589909074 c:\users\luciano\desktop\c\pp1laboratorio\noteboocks.h
+	"Marca.h"
+	"Tipo.h"
+	"Servicios.h"
+
+1589813593 c:\users\luciano\desktop\c\pp1laboratorio\marca.h
+
+1589925208 c:\users\luciano\desktop\c\pp1laboratorio\tipo.h
+
+1589813758 source:c:\users\luciano\desktop\c\pp1laboratorio\marca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Marca.h"
+	"Validaciones.h"
+
+1589825479 source:c:\users\luciano\desktop\c\pp1laboratorio\tipo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Tipo.h"
+
+1589907981 source:c:\users\luciano\desktop\c\pp1laboratorio\servicios.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Servicios.h"
+
+1589909074 c:\users\luciano\desktop\c\pp1laboratorio\servicios.h
+
+1589933896 source:c:\users\luciano\desktop\c\pp1laboratorio\trabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Trabajos.h"
+	"Noteboocks.h"
+	"Marca.h"
+	"Tipo.h"
+	"Servicios.h"
+
+1589933098 c:\users\luciano\desktop\c\pp1laboratorio\trabajos.h
+	"Servicios.h"
+	"Noteboocks.h"
+	"Marca.h"
+	"Tipo.h"
+
