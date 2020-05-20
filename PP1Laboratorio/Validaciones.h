@@ -18,6 +18,7 @@ int getIdTipo();
 int getId();
 int getIdMarca();
 int getPrecio();
+int getIdCliente();
 float getFloat(char[]);
 
 

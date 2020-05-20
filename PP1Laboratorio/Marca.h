@@ -9,5 +9,5 @@ typedef struct
 
 int cargarDescripcionMarca(char[],int,eMarca[], int);
 void mostrarMarcas(eMarca[], int);
-
+void mostrarMarca(eMarca);
 #endif // MARCA_H_INCLUDED

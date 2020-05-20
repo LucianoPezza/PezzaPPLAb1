@@ -59,7 +59,7 @@ int buscarLibreTrabajos(eTrabajo[], int);
  * \return confirmo
  *
  */
-int altaTrabajos(int, eTrabajo[], int,int, eNotebook[], eServicio[],eMarca[], eTipo[]);
+int altaTrabajos(int, eTrabajo[], int,int, eNotebook[], eServicio[],eMarca[], eTipo[],eCliente []);
 
 
 

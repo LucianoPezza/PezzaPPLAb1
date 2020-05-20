@@ -25,3 +25,7 @@ void mostrarMarcas(eMarca lista[], int tammaster)
         printf("\n%d %8s ", lista[i].id, lista[i].descripcionMarca);
     }
 }
+void mostrarMarca(eMarca lista)
+{
+    printf("\n%d %8s ", lista.id, lista.descripcionMarca);
+}

@@ -30,7 +30,7 @@ int buscarLibreTrabajos(eTrabajo lista[], int tam)
     return indice;
 }
 
-int altaTrabajos(int idx, eTrabajo listaT[], int tam,int tamt, eNotebook listaN[], eServicio listaS[], eMarca listaM[], eTipo listaTI[])
+int altaTrabajos(int idx, eTrabajo listaT[], int tam,int tamt, eNotebook listaN[], eServicio listaS[], eMarca listaM[], eTipo listaTI[],eCliente listaC[])
 {
     int indice = buscarLibreTrabajos(listaT, tam);
     int auxidServicio;
@@ -46,7 +46,7 @@ int altaTrabajos(int idx, eTrabajo listaT[], int tam,int tamt, eNotebook listaN[
     }
     else
     {
-        mostrarNotebooks(listaN, tam, listaM, listaTI,tamt );
+        mostrarNotebooks(listaN, tam, listaM, listaTI,tamt, listaC );
         auxidNotebook = getInt("\nIngrese el id de la notebook que desee: ","Error. Solo numeros: ");
         indiceId = identificarId(auxidNotebook, listaN, tam);
         if(indiceId != -1)

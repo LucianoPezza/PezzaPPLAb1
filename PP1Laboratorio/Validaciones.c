@@ -246,3 +246,14 @@ int getIdServicio()
 
     return servicio;
 }
+int getIdCliente()
+{
+    int idC;
+    idC = getInt("Ingrese el IdCliente que desee: ", "Error. Ingrese solo numeros: ");
+    while(idC > 703 || idC < 700)
+    {
+        idC = getInt("Ingrese el IdCliente adecuado Entre 700 y 703: ","Error. Solo ingrese numeros: ");
+    }
+
+    return idC;
+}

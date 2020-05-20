@@ -14,7 +14,7 @@
 	<conio.h>
 	"Validaciones.h"
 
-1589947767 source:c:\users\luciano\desktop\c\pp1laboratorio\validaciones.c
+1589977984 source:c:\users\luciano\desktop\c\pp1laboratorio\validaciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -22,9 +22,9 @@
 	<conio.h>
 	"Validaciones.h"
 
-1589948140 c:\users\luciano\desktop\c\pp1laboratorio\validaciones.h
+1589977296 c:\users\luciano\desktop\c\pp1laboratorio\validaciones.h
 
-1589946067 source:c:\users\luciano\desktop\c\pp1laboratorio\main.c
+1589986388 source:c:\users\luciano\desktop\c\pp1laboratorio\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Validaciones.h"
@@ -33,26 +33,29 @@
 	"Servicios.h"
 	"Noteboocks.h"
 	"Trabajos.h"
+	"Informes.h"
 
-1589947629 source:c:\users\luciano\desktop\c\pp1laboratorio\noteboocks.c
+1589985398 source:c:\users\luciano\desktop\c\pp1laboratorio\noteboocks.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Noteboocks.h"
 	"Validaciones.h"
+	"cliente.h"
 	"Marca.h"
 	"Tipo.h"
 
-1589909074 c:\users\luciano\desktop\c\pp1laboratorio\noteboocks.h
+1589979322 c:\users\luciano\desktop\c\pp1laboratorio\noteboocks.h
 	"Marca.h"
 	"Tipo.h"
 	"Servicios.h"
+	"cliente.h"
 
-1589813593 c:\users\luciano\desktop\c\pp1laboratorio\marca.h
+1589986531 c:\users\luciano\desktop\c\pp1laboratorio\marca.h
 
 1589925208 c:\users\luciano\desktop\c\pp1laboratorio\tipo.h
 
-1589813758 source:c:\users\luciano\desktop\c\pp1laboratorio\marca.c
+1589986578 source:c:\users\luciano\desktop\c\pp1laboratorio\marca.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -74,7 +77,7 @@
 
 1589909074 c:\users\luciano\desktop\c\pp1laboratorio\servicios.h
 
-1589933896 source:c:\users\luciano\desktop\c\pp1laboratorio\trabajo.c
+1589977026 source:c:\users\luciano\desktop\c\pp1laboratorio\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -85,9 +88,40 @@
 	"Tipo.h"
 	"Servicios.h"
 
-1589933098 c:\users\luciano\desktop\c\pp1laboratorio\trabajos.h
+1589976973 c:\users\luciano\desktop\c\pp1laboratorio\trabajos.h
 	"Servicios.h"
 	"Noteboocks.h"
 	"Marca.h"
 	"Tipo.h"
+
+1589976697 source:c:\users\luciano\desktop\c\pp1laboratorio\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"cliente.h"
+
+1589976573 c:\users\luciano\desktop\c\pp1laboratorio\cliente.h
+
+1589987038 source:c:\users\luciano\desktop\c\pp1laboratorio\informes.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"Validaciones.h"
+	"Marca.h"
+	"Tipo.h"
+	"Servicios.h"
+	"Noteboocks.h"
+	"Trabajos.h"
+	"Informes.h"
+
+1589987038 c:\users\luciano\desktop\c\pp1laboratorio\informes.h
+	"Noteboocks.h"
+	"Validaciones.h"
+	"Marca.h"
+	"Tipo.h"
+	"Servicios.h"
+	"Noteboocks.h"
+	"Trabajos.h"
+	"Informes.h"
 

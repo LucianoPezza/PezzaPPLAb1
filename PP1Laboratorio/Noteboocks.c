@@ -3,10 +3,11 @@
 #include <string.h>
 #include "Noteboocks.h"
 #include "Validaciones.h"
+#include "cliente.h"
 #include "Marca.h"
 #include "Tipo.h"
 
-void hardcodearMarcaTipoYServicios(eTipo unTipo[], eMarca unaMarca[], int tammaster, eServicio unServicio[])
+void hardcodearMarcaTipoYServicios(eTipo unTipo[], eMarca unaMarca[], int tammaster, eServicio unServicio[], eCliente unCliente[])
 {
     int idT[] = {5000, 5001, 5002, 5003};
     char descripcionT[][20] = {"Gamer","Disenio","Ultrabook","Normalita"};
@@ -17,6 +18,11 @@ void hardcodearMarcaTipoYServicios(eTipo unTipo[], eMarca unaMarca[], int tammas
     int idS [] = {20000, 20001, 20002, 20003};
     char descripcionS[][25] = {"Bateria","Antivirus","Actualizacion","Fuente"};
     int precioS[] = {250, 300, 400, 600};
+
+    char sexosC[] = {'M', 'M','F','F'};
+    char nombresC[][20] = {"Luciano", "Christian", "Yanina", "Lucia"};
+    int idC []= {700, 701, 702, 703};
+
     for(int i =0; i<tammaster; i++)
     {
         strcpy(unTipo[i].descripcionTipo, descripcionT[i]);
@@ -28,6 +34,34 @@ void hardcodearMarcaTipoYServicios(eTipo unTipo[], eMarca unaMarca[], int tammas
         unServicio[i].id = idS[i];
         strcpy(unServicio[i].descripcion, descripcionS[i]);
         unServicio[i].precio = precioS[i];
+
+        unCliente[i].sexos = sexosC[i];
+        strcpy(unCliente[i].nombres , nombresC[i]);
+        unCliente[i].id = idC[i];
+    }
+
+}
+
+void hardcodearNotebooks(eNotebook lista[], int tam)
+{
+    int idT[] = {5000, 5001, 5001, 5003};
+    int idM [] = {1000, 1001, 1001, 1001};
+  //  int idS [] = {20000, 20001, 20002, 20003};
+    int precioS[] = {15000, 5500, 10000, 60000};
+    int ids[] = {1, 2, 3, 4};
+
+    char marcas[][20] = {"XRL", "MFULL", "APPEL", "KKJPR"};
+    int idC []= {700, 701, 702, 703};
+
+    for(int i =0; i<tam; i++)
+    {
+        lista[i].idTipo = idT[i];
+        lista[i].idMarca = idM[i];
+        lista[i].idCliente = idC[i];
+        lista[i].precio = precioS[i];
+        lista[i].id = ids[i];
+        strcpy(lista[i].modelo, marcas[i]);
+        lista[i].isEmpty = 0;
     }
 
 }
@@ -39,7 +73,7 @@ void inicializarNoteboocks(eNotebook lista[], int tam)
         lista[i].isEmpty = 1;
     }
 }
-int altaNotebooks(eNotebook lista[], int tam,eMarca listaM[], eTipo listaT[], int tammaster)
+int altaNotebooks(eNotebook lista[], int tam,eMarca listaM[], eTipo listaT[], int tammaster,eCliente listaC[])
 {
     int idx;
     int auxidMarca;
@@ -68,10 +102,16 @@ int altaNotebooks(eNotebook lista[], int tam,eMarca listaM[], eTipo listaT[], in
             auxNot.precio =getPrecio();
 
             mostrarMarcas(listaM, tammaster);
+            printf("\n");
             auxidMarca = getIdMarca();
 
             mostrarTipos(listaT, tammaster);
+            printf("\n");
             auxidTipo = getIdTipo();
+
+            mostrarClientes(listaC, tammaster);
+            printf("\n");
+            auxNot.idCliente = getIdCliente();
 
             auxNot.idTipo =auxidTipo;
             auxNot.idMarca = auxidMarca;
@@ -119,12 +159,12 @@ int buscarNotebook(int id, eNotebook lista[], int tam)
 }
 
 
-void bajaNotebook(eNotebook lista[], int tam, eMarca listaM[], eTipo listaT[], int tammaster)
+void bajaNotebook(eNotebook lista[], int tam, eMarca listaM[], eTipo listaT[], int tammaster,eCliente listaC[])
 {
     int id;
     int indice;
     char confirmacion;
-    mostrarNotebooks(lista,tam, listaM, listaT, tammaster);
+    mostrarNotebooks(lista,tam, listaM, listaT, tammaster, listaC);
     id = getInt("\nIngrese legajo: ", "Error. Ingrese numeros: ");
 
     indice = buscarNotebook(id, lista, tam);
@@ -149,7 +189,7 @@ void bajaNotebook(eNotebook lista[], int tam, eMarca listaM[], eTipo listaT[], i
         }
     }
 }
-void modificarNotebook(eNotebook lista[], int tam, eMarca listaM[], eTipo listaT[], int tammaster)
+void modificarNotebook(eNotebook lista[], int tam, eMarca listaM[], eTipo listaT[], int tammaster,eCliente listaC[])
 {
     int id;
     int opcion;
@@ -159,7 +199,8 @@ void modificarNotebook(eNotebook lista[], int tam, eMarca listaM[], eTipo listaT
 
     char follow = 's';
 
-    mostrarNotebooks(lista, tam, listaM, listaT, tammaster);
+    mostrarNotebooks(lista, tam, listaM, listaT, tammaster, listaC);
+    printf("\n");
     id = getInt("\nIngrese ID: ", "Error. Ingrese numeros: ");
     indice = buscarNotebook(id, lista, tam);
 
@@ -198,52 +239,33 @@ void modificarNotebook(eNotebook lista[], int tam, eMarca listaM[], eTipo listaT
     }
 }
 
-void mostrarNotebook(eNotebook lista, eMarca listaM[],eTipo listaT[], int tammaster)
+void mostrarNotebook(eNotebook lista, eMarca listaM[],eTipo listaT[], int tammaster,eCliente listaC[])
 {
     char Tipodes[20];
     char Marcades[20];
+    char nombreClientes[20];
     cargarDescripcionMarca(Marcades, lista.idMarca, listaM, tammaster);
     cargarDescripcionTipo(Tipodes, lista.idTipo, listaT, tammaster);
-    printf("\n%d %10s %10s %13s %10d",lista.id, lista.modelo, Marcades, Tipodes, lista.precio);
+    cargarNombreCliente(nombreClientes, lista.idCliente,listaC , tammaster);
+
+    printf("\n%d %10s %10s %13s %10s %10d",lista.id, lista.modelo, Marcades, Tipodes,nombreClientes, lista.precio);
 }
-void mostrarNotebooks(eNotebook lista[], int tam, eMarca listaM[],eTipo listaT[], int tammaster)
+void mostrarNotebooks(eNotebook lista[], int tam, eMarca listaM[],eTipo listaT[], int tammaster,eCliente listaC[])
 {
     int flag;
-    printf("%s %10s %10s %10s %15s", "ID", "Modelo", "Marca", "Tipo", "Precio");
+    printf("%s %10s %10s %10s %10s %15s", "ID", "Modelo", "Marca", "Tipo","Cliente" ,"Precio");
 
     for(int i =0; i < tam; i++)
     {
         if(lista[i].isEmpty == 0)
         {
-            mostrarNotebook(lista[i],listaM,listaT,tammaster);
+            mostrarNotebook(lista[i],listaM,listaT,tammaster, listaC);
             flag = 1;
         }
     }
     if(flag == 0)
     {
         printf("No hay trabajos que mostrar");
-    }
-}
-
-void ordenarPorMarcaYPrecio(eMarca listaM[], int tam, eNotebook lista[])
-{
-    eNotebook auxnot;
-    for(int i =0; i<tam-1; i++)
-    {
-        for(int j= i+1; j< tam; j++)
-            if(strcmp(listaM[i].descripcionMarca, listaM[j].descripcionMarca) > 0)
-            {
-                auxnot = lista[i];
-                lista[i]= lista[j];
-                lista[j]= auxnot;
-
-            }/*
-            else if(strcmp(listaM[i].descripcionMarca, listaM[j].descripcionMarca) == 0 && lista[i].precio > lista[j].precio)
-            {
-                auxnot = lista[i];
-                lista[i]= lista[j];
-                lista[j]= auxnot;
-            }*/
     }
 }
 
